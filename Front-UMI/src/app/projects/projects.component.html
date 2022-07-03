@@ -1,1 +1,7 @@
-<p>projects works!</p>
+<div class="flex">
+  <div *ngFor="let project of projectService.getProjects()">
+    <p-card header="test">
+      Content
+    </p-card>
+  </div>
+</div>

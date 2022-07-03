@@ -7,6 +7,9 @@ import { UsersComponent } from './users/users.component';
 import { NavbarComponent } from './projects/navbar/navbar.component';
 import { ItemsComponent } from './projects/items/items.component';
 import { ModelsComponent } from './projects/models/models.component';
+import {CardModule} from "primeng/card";
+import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ModelsComponent } from './projects/models/models.component';
     ModelsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CardModule,
+    AppRoutingModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
