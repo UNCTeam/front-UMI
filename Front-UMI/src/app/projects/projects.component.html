@@ -1,7 +1,9 @@
-<div class="flex">
-  <div *ngFor="let project of projectService.getProjects()">
-    <p-card header="test">
-      Content
-    </p-card>
+<div class="project-page">
+  <div  (mouseover)="hoveringProject[i]=true"
+        (mouseout)="hoveringProject[i]=false" class="project" *ngFor="let project of projectService.getProjects(); let i = index">
+    <div class="square-project" (click)="goToProject(project)">
+      <p *ngIf="!hoveringProject[i]" class="title">{{ project.name }}</p>
+      <p *ngIf="hoveringProject[i]" class="pencil"><i class="pi pi-pencil"></i></p>
+    </div>
   </div>
 </div>

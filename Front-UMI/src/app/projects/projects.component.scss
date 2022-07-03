@@ -1,0 +1,47 @@
+.project-page {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project {
+  margin-right: 30px;
+  background-color: var(--primary);
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+
+.project:hover {
+  -webkit-filter: brightness(70%);
+  transition: all 0.5s ease-out;
+
+}
+
+.square-project {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.square-project p {
+  text-align: center;
+  color: white;
+}
+
+.pencil {
+  opacity: 100;
+  left: 0;
+}
+
+.project:hover p.title{
+  opacity: 0;
+}
+
+.project:hover p.pencil{
+  opacity: 100;
+}

@@ -9,7 +9,7 @@ export class ProjectService {
   private projects: Project[];
 
   constructor() {
-    this.projects = new Array(new Project("test"), new Project("test2"));
+    this.projects = new Array(new Project(1, "test"), new Project(2, "test2"));
   }
 
   getProjects(): Project[] {

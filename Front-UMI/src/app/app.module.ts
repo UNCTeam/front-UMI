@@ -4,12 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { UsersComponent } from './users/users.component';
-import { NavbarComponent } from './projects/navbar/navbar.component';
-import { ItemsComponent } from './projects/items/items.component';
-import { ModelsComponent } from './projects/models/models.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ItemsComponent } from './projects/project/items/items.component';
+import { ModelsComponent } from './projects/project/models/models.component';
 import {CardModule} from "primeng/card";
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from "@angular/router";
+import { ProjectComponent } from './projects/project/project.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {RouterModule} from "@angular/router";
     UsersComponent,
     NavbarComponent,
     ItemsComponent,
-    ModelsComponent
+    ModelsComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
