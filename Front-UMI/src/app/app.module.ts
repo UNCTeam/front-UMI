@@ -11,6 +11,7 @@ import {CardModule} from "primeng/card";
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from "@angular/router";
 import { ProjectComponent } from './projects/project/project.component';
+import { ConfigComponent } from './projects/project/config/config.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProjectComponent } from './projects/project/project.component';
     NavbarComponent,
     ItemsComponent,
     ModelsComponent,
-    ProjectComponent
+    ProjectComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,
