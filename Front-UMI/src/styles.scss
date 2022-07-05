@@ -2,6 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind forms;
 
 * {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -19,3 +20,12 @@ body {
   --primary: darkcyan;
 }
 
+.dashboard-content {
+  margin-left: 200px;
+}
+
+@media (max-width: 1250px) {
+  .dashboard-content {
+    margin-left: 90px;
+  }
+}

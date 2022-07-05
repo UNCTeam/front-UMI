@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from "@angular/router";
 import { ProjectComponent } from './projects/project/project.component';
 import { ConfigComponent } from './projects/project/config/config.component';
+import { LoginComponent } from './login/login.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,14 +24,16 @@ import { ConfigComponent } from './projects/project/config/config.component';
     ItemsComponent,
     ModelsComponent,
     ProjectComponent,
-    ConfigComponent
+    ConfigComponent,
+    LoginComponent
   ],
-  imports: [
-    BrowserModule,
-    CardModule,
-    AppRoutingModule,
-    RouterModule,
-  ],
+    imports: [
+        BrowserModule,
+        CardModule,
+        AppRoutingModule,
+        RouterModule,
+        FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,1 +1,41 @@
-<p>config works!</p>
+<app-navbar style="position:fixed"></app-navbar>
+<div class="dashboard-content">
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold text-gray-900">Configuration</h1>
+      <div class="mt-2 flex items-center text-sm text-gray-500">
+        Configure your project
+      </div>
+    </div>
+
+  </header>
+  <main>
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <!-- Replace with your content -->
+      <div class="px-4 py-6 sm:px-0">
+        <div class="bg-white border-round p-4">
+          <form action="#" method="POST">
+            <div class="overflow-hidden sm:rounded-md">
+              <div class="col-span-6 sm:col-span-3 w-3">
+                <label for="project-name" class="block text-sm font-medium text-gray-700">Project name</label>
+                <input type="text" name="project-name" id="project-name" [(ngModel)]="name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+              <div class="col-span-6 sm:col-span-3 w-3 mt-3">
+                <label class="block text-sm font-medium text-gray-700">Authorized Servers</label>
+                <div class="mt-1 flex rounded-md shadow-sm">
+                  <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-sm"></span>
+                  <button type="button" class="bg-white py-2 px-3 border border-gray-300 rounded-r-md shadow-sm hover:bg-gray-50 focus:outline-none">
+                    <svg style="transform: scale(0.1);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+      <!-- /End replace -->
+    </div>
+  </main>
+</div>

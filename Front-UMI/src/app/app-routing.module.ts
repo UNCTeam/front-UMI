@@ -6,13 +6,15 @@ import {ProjectComponent} from "./projects/project/project.component";
 import {ItemsComponent} from "./projects/project/items/items.component";
 import {ModelsComponent} from "./projects/project/models/models.component";
 import {ConfigComponent} from "./projects/project/config/config.component";
+import {LoginComponent} from "./login/login.component";
 
 const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
+  { path: 'items', component: ItemsComponent},
+  { path: 'models', component: ModelsComponent},
+  { path: 'config', component: ConfigComponent},
   { path: 'project', component: ProjectComponent},
-  { path: 'project/items', component: ItemsComponent},
-  { path: 'project/models', component: ModelsComponent},
-  { path: 'project/config', component: ConfigComponent},
+  { path: 'login', component: LoginComponent},
 ];
 
 @NgModule({

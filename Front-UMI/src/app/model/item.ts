@@ -1,4 +1,5 @@
 import {CustomTag} from "./customTag";
+import {ItemType} from "./itemType";
 
 export class Item {
   name: String;
