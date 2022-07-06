@@ -14,6 +14,7 @@ import { ProjectComponent } from './projects/project/project.component';
 import { ConfigComponent } from './projects/project/config/config.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
+import { CreateItemComponent } from './projects/project/items/create-item/create-item.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {FormsModule} from "@angular/forms";
     ModelsComponent,
     ProjectComponent,
     ConfigComponent,
-    LoginComponent
+    LoginComponent,
+    CreateItemComponent
   ],
     imports: [
         BrowserModule,

@@ -4,5 +4,5 @@ export enum ItemType {
   CHESTPLATE,
   LEGGINS,
   BOOTS,
-  AUTRE,
+  OTHER,
 }

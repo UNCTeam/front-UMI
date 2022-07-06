@@ -9,8 +9,9 @@ import {ProjectService} from "../../../services/project.service";
 })
 export class ConfigComponent implements OnInit {
 
-  name: string | undefined;
-  authorizedServer: Array<AuthorizedServer> | undefined;
+  ipInputField = "";
+  name = "";
+  authorizedServer: Array<AuthorizedServer> = new Array<AuthorizedServer>();
 
   constructor(public projectService: ProjectService) { }
 
@@ -21,6 +22,17 @@ export class ConfigComponent implements OnInit {
 
   onSave(): void {
 
+  }
+
+  removeServer(server: AuthorizedServer): void {
+    this.authorizedServer = this.authorizedServer.filter(serv => serv != server);
+  }
+
+  addIp(): void {
+    if(this.ipInputField !== "") {
+      this.authorizedServer.push(new AuthorizedServer(this.ipInputField));
+      this.ipInputField = "";
+    }
   }
 
 }

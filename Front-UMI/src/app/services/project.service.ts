@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Project} from "../model/project";
 import {ActivatedRoute} from "@angular/router";
 import {AuthorizedServer} from "../model/authorizedServer";
 import {Item} from "../model/item";
 import {Model} from "../model/model";
+import {ItemType} from "../model/itemType";
+import {CustomTag} from "../model/customTag";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,8 @@ export class ProjectService {
   private projects: Project[];
 
   constructor(private route: ActivatedRoute) {
-    let fakeproject = new Project(1, "test", new Array<AuthorizedServer>(),  new Array<Item>(), new Array<Model>());
+    let fakeproject = new Project(1, "test", new Array<AuthorizedServer>(),
+      new Array<Item>(new Item('item1', ItemType.CHESTPLATE, 1000, new Array<CustomTag>())), new Array<Model>());
     this.projects = [fakeproject];
     this.selectedProject = fakeproject;
   }
