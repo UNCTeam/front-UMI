@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjectService} from "../../../services/project.service";
 import {Item} from "../../../model/item";
+import {ItemType} from "../../../model/itemType";
 
 @Component({
   selector: 'app-items',
@@ -10,6 +11,7 @@ import {Item} from "../../../model/item";
 export class ItemsComponent implements OnInit {
 
   itemList = new Array<Item>();
+  ItemType = ItemType;
 
   constructor(private projectService: ProjectService) { }
 
