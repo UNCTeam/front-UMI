@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'models', component: ModelsComponent},
   { path: 'config', component: ConfigComponent},
   { path: 'project', component: ProjectComponent},
-  { path: 'login', component: LoginComponent},
+  { path: '', component: LoginComponent},
 ];
 
 @NgModule({
