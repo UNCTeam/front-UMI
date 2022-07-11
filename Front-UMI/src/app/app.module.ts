@@ -16,6 +16,9 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
 import { CreateItemComponent } from './projects/project/items/create-item/create-item.component';
 import {HttpClientModule} from "@angular/common/http";
+import { ModelSelectComponent } from './projects/project/models/model-select/model-select.component';
+import {OrderListModule} from "primeng/orderlist";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -28,16 +31,19 @@ import {HttpClientModule} from "@angular/common/http";
     ProjectComponent,
     ConfigComponent,
     LoginComponent,
-    CreateItemComponent
+    CreateItemComponent,
+    ModelSelectComponent
   ],
-    imports: [
-        HttpClientModule,
-        BrowserModule,
-        CardModule,
-        AppRoutingModule,
-        RouterModule,
-        FormsModule,
-    ],
+  imports: [
+    HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    CardModule,
+    AppRoutingModule,
+    RouterModule,
+    FormsModule,
+    OrderListModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
