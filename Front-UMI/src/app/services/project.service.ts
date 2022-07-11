@@ -16,8 +16,8 @@ export class ProjectService {
   private projects: Project[];
 
   constructor(private route: ActivatedRoute) {
-    let fakeproject = new Project(1, "test", new Array<AuthorizedServer>(),
-      new Array<Item>(new Item('item1', ItemType.CHESTPLATE, 1000, new Array<CustomTag>())), new Array<Model>());
+    let fakeproject = new Project(1, "test", new Array<AuthorizedServer>());
+     // new Array<Item>(new Item('item1', ItemType.WEAPONS, 1000, new Array<CustomTag>(), null)));
     this.projects = [fakeproject];
     this.selectedProject = fakeproject;
   }

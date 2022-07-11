@@ -4,14 +4,16 @@ import {RouterModule, Routes} from "@angular/router";
 import {ProjectsComponent} from "./projects/projects.component";
 import {ProjectComponent} from "./projects/project/project.component";
 import {ItemsComponent} from "./projects/project/items/items.component";
-import {ModelsComponent} from "./projects/project/models/models.component";
+import {BlocksComponent} from "./projects/project/blocks/blocks.component";
 import {ConfigComponent} from "./projects/project/config/config.component";
 import {LoginComponent} from "./login/login.component";
+import {CreateItemComponent} from "./projects/project/items/create-item/create-item.component";
 
 const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
   { path: 'items', component: ItemsComponent},
-  { path: 'models', component: ModelsComponent},
+  { path: 'items/new', component: CreateItemComponent },
+  { path: 'blocks', component: BlocksComponent},
   { path: 'config', component: ConfigComponent},
   { path: 'project', component: ProjectComponent},
   { path: '', component: LoginComponent},

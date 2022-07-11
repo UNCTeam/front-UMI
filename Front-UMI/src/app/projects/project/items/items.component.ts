@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProjectService} from "../../../services/project.service";
 import {Item} from "../../../model/item";
 import {ItemType} from "../../../model/itemType";
+import {ItemService} from "../../../services/item.service";
 
 @Component({
   selector: 'app-items',
@@ -10,13 +11,19 @@ import {ItemType} from "../../../model/itemType";
 })
 export class ItemsComponent implements OnInit {
 
-  itemList = new Array<Item>();
   ItemType = ItemType;
+  isCreating = false;
 
-  constructor(private projectService: ProjectService) { }
+  constructor(public itemService: ItemService, private projectService: ProjectService) { }
 
   ngOnInit(): void {
-    this.itemList = this.projectService.selectedProject.items;
   }
 
+  deleteItem(item: Item) {
+    this.itemService.deleteItem(item);
+  }
+
+  editItem(item: Item) {
+
+  }
 }

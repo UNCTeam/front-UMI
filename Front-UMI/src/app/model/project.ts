@@ -6,14 +6,10 @@ export class Project {
   id: number;
   name: string;
   authorizedServers: Array<AuthorizedServer>;
-  items: Array<Item>;
-  models: Array<Model>;
 
-  constructor(id: number, name: string, authorizedServers: Array<AuthorizedServer>, items: Array<Item>, models: Array<Model>) {
+  constructor(id: number, name: string, authorizedServers: Array<AuthorizedServer>) {
     this.id = id;
     this.name = name;
     this.authorizedServers = authorizedServers;
-    this.items = items;
-    this.models = models;
   }
 }

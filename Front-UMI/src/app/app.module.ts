@@ -6,7 +6,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { UsersComponent } from './users/users.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ItemsComponent } from './projects/project/items/items.component';
-import { ModelsComponent } from './projects/project/models/models.component';
+import { BlocksComponent } from './projects/project/blocks/blocks.component';
 import {CardModule} from "primeng/card";
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from "@angular/router";
@@ -24,7 +24,7 @@ import {HttpClientModule} from "@angular/common/http";
     UsersComponent,
     NavbarComponent,
     ItemsComponent,
-    ModelsComponent,
+    BlocksComponent,
     ProjectComponent,
     ConfigComponent,
     LoginComponent,
