@@ -27,7 +27,7 @@
                 Create item
               </button>
               <div class="flex flex-wrap -m-4">
-                  <div *ngFor="let item of itemService.itemList" class="xl:w-1/4 md:w-1/2 p-4">
+                  <div *ngFor="let item of itemService.itemList; let i = index" class="xl:w-1/4 md:w-1/2 p-4">
                     <div class="border border-gray-200 p-6 rounded-lg">
                       <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
                         <ng-container [ngSwitch]="item.type">
@@ -275,7 +275,7 @@
                         </ng-container>
                       </div>
                       <h2 class="text-lg text-gray-900 font-medium title-font mb-2">{{ item.name }}</h2>
-                      <button (click)="editItem(item)" type="button" class="bg-white py-2 px-3 border border-gray-300 rounded-l-md shadow-sm hover:bg-gray-50 focus:outline-none">
+                      <button [routerLink]="['/items/edit', i]" type="button" class="bg-white py-2 px-3 border border-gray-300 rounded-l-md shadow-sm hover:bg-gray-50 focus:outline-none">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                         </svg>

@@ -4,6 +4,7 @@ import {CustomTag} from "../../../../model/customTag";
 import {CustomTagProperty} from "../../../../model/customTagProperty";
 import {Item} from "../../../../model/item";
 import {ItemService} from "../../../../services/item.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-create-item',
@@ -17,11 +18,19 @@ export class CreateItemComponent implements OnInit {
   customValueField = 0;
   customTagField: CustomTagProperty = new CustomTagProperty('ATTACK', '12');
   itemField = new Item(0, "", ItemType.HELMET, 0, new Array<CustomTag>(), null);
+  isEditing = false;
 
-  constructor(public itemService: ItemService) { }
+  constructor(private activatedroute: ActivatedRoute, public itemService: ItemService) { }
 
   ngOnInit(): void {
     this.itemField = new Item(0, "", ItemType.HELMET, 0, new Array<CustomTag>(), null);
+    this.activatedroute.paramMap.subscribe(params => {
+      if(params.keys.length != 0) {
+        // @ts-ignore
+        let id:number = +params.get('id');
+        this.itemField = this.itemService.itemList[id];
+      }
+    });
   }
 
   removeCustomTag(customTag: CustomTag) {
@@ -37,7 +46,5 @@ export class CreateItemComponent implements OnInit {
     const item = new Item(1, this.itemField.name, this.itemField.type, this.itemField.durability, this.itemField.customTags, null);
     // TODO: Faire un susbcribe sur l'appel API -> Si value => redirect + message success Si error => afficher error
     this.itemService.newItem(item);
-    console.log(item);
-    console.log(this.itemService.itemList);
   }
 }

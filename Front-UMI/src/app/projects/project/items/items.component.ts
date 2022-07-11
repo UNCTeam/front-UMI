@@ -22,8 +22,4 @@ export class ItemsComponent implements OnInit {
   deleteItem(item: Item) {
     this.itemService.deleteItem(item);
   }
-
-  editItem(item: Item) {
-
-  }
 }

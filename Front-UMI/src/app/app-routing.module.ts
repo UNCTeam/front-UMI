@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
   { path: 'items', component: ItemsComponent},
   { path: 'items/new', component: CreateItemComponent },
+  { path: 'items/edit/:id', component: CreateItemComponent },
   { path: 'blocks', component: BlocksComponent},
   { path: 'config', component: ConfigComponent},
   { path: 'project', component: ProjectComponent},
