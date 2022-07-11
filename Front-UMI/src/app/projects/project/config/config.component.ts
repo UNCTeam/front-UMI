@@ -35,4 +35,7 @@ export class ConfigComponent implements OnInit {
     }
   }
 
+  save() {
+
+  }
 }
