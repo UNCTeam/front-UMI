@@ -24,6 +24,8 @@ import {DropdownModule} from "primeng/dropdown";
 import {ButtonModule} from "primeng/button";
 import {TableModule} from "primeng/table";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
+import { CreateModelComponent } from './projects/project/models/create-model/create-model.component';
+import {FileUploadModule} from "primeng/fileupload";
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import {ConfirmDialogModule} from "primeng/confirmdialog";
     ConfigComponent,
     LoginComponent,
     CreateItemComponent,
-    ModelSelectComponent
+    ModelSelectComponent,
+    CreateModelComponent
   ],
   imports: [
     HttpClientModule,
@@ -53,6 +56,7 @@ import {ConfirmDialogModule} from "primeng/confirmdialog";
     ButtonModule,
     TableModule,
     ConfirmDialogModule,
+    FileUploadModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

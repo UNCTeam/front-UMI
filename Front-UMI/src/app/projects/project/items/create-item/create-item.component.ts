@@ -24,7 +24,7 @@ export class CreateItemComponent implements OnInit {
   customValueField = 0;
   customTagField: CustomTagProperty = new CustomTagProperty('ATTACK', '12');
   itemField = new Item(0, "", ItemType.HELMET, 0, new Array<CustomTag>(), null);
-
+  itemModel: any;
   // Edition ou création ?
   isEditing = false;
 
@@ -70,8 +70,7 @@ export class CreateItemComponent implements OnInit {
 
     this.ref.onClose.subscribe((model: Model) =>{
       if (model) {
-        console.log(model);
-        // TODO : faire la lisaison
+        this.itemModel = model;
       }
     });
   }

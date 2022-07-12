@@ -29,3 +29,32 @@ body {
     margin-left: 90px;
   }
 }
+
+/* adjust the padding of all buttons inside the file upload button bar */
+.p-fileupload-choose {
+  font-size: 0.8em!important;
+  padding: 0.5rem 1em!important;
+}
+
+.p-fileupload-buttonbar > .p-element > .p-element {
+  font-size: 0.8em!important;
+  padding: 0.5rem 1em!important;
+
+}
+
+.p-fileupload-buttonbar > .p-button-label  {
+  display: none;
+}
+  /* increase fileupload button spacing between 'choose' and 'upload' */
+.p-fileupload-buttonbar .p-fileupload-choose {
+  margin-right: 10em;
+}
+
+/* remove the border of file upload content list */
+.p-fileupload-content {
+  border: 0 none;
+}
+
+.p-button {
+  background-color: var(--indigo-600)!important;
+}
