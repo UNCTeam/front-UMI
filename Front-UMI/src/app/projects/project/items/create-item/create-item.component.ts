@@ -70,6 +70,7 @@ export class CreateItemComponent implements OnInit {
 
     this.ref.onClose.subscribe((model: Model) =>{
       if (model) {
+        console.log(model);
         // TODO : faire la lisaison
       }
     });

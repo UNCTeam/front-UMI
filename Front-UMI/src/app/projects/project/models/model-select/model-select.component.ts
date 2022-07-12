@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ModelService} from "../../../../services/model.service";
+import {PrimeNGConfig, SelectItem} from "primeng/api";
+import {Model} from "../../../../model/model";
+import {DynamicDialogConfig, DynamicDialogRef} from "primeng/dynamicdialog";
 
 @Component({
   selector: 'app-model-select',
@@ -8,12 +11,13 @@ import {ModelService} from "../../../../services/model.service";
 })
 export class ModelSelectComponent implements OnInit {
 
-  constructor(public modelService: ModelService) { }
+  constructor(public modelService: ModelService, public ref: DynamicDialogRef, public config: DynamicDialogConfig) { }
 
   ngOnInit(): void {
+
   }
 
-  select(model: any) {
-
+  selectModel(model: Model) {
+    this.ref.close(model);
   }
 }

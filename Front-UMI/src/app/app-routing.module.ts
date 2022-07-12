@@ -8,6 +8,7 @@ import {BlocksComponent} from "./projects/project/blocks/blocks.component";
 import {ConfigComponent} from "./projects/project/config/config.component";
 import {LoginComponent} from "./login/login.component";
 import {CreateItemComponent} from "./projects/project/items/create-item/create-item.component";
+import {ModelSelectComponent} from "./projects/project/models/model-select/model-select.component";
 
 const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'items/new', component: CreateItemComponent },
   { path: 'items/edit/:id', component: CreateItemComponent },
   { path: 'blocks', component: BlocksComponent},
+  { path: 'models', component: ModelSelectComponent},
   { path: 'config', component: ConfigComponent},
   { path: 'project', component: ProjectComponent},
   { path: '', component: LoginComponent},

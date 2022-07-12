@@ -4,18 +4,24 @@
   </svg>
   Add
 </button>
-<p-orderList [value]="modelService.models">
-  <ng-template let-model pTemplate="item">
-    <div>
-      <img src="assets/showcase/images/demo/car/{{model.texturePath}}.png" style="display:inline-block;margin:2px 0 2px 2px" width="48">
-      <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{model.texturePath.split('/')[model.texturePath.split('/').length-1]}}</div>
-      <div style="float:left;">
-        <button (click)="select(model)" type="button" class="inline-flex items-center px-4 py-2 border-r-0 border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-          <svg xmlns="http://www.w3.org/2000/svg" class="-ml-1 mr-2 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-          </svg>
-        </button>
-      </div>
-    </div>
+<!-- TODO : Ajouter un champs pour filtrer par nom -->
+<p-table [value]="modelService.models" [paginator]="true" [rows]="5" [responsive]="true">
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="texturePath">Texture name <p-sortIcon field="vin"></p-sortIcon></th>
+      <th pSortableColumn="modelPath">Model name <p-sortIcon field="price"></p-sortIcon></th>
+      <th pSortableColumn="preview">Preview <p-sortIcon field="inventoryStatus"></p-sortIcon></th>
+      <th style="width:4em"></th>
+    </tr>
   </ng-template>
-</p-orderList>
+  <ng-template pTemplate="body" let-model>
+    <tr>
+      <td>{{model.texturePath.split('/')[model.texturePath.split('/').length-1]}}</td>
+      <td>{{model.modelPath.split('/')[model.modelPath.split('/').length-1]}}</td>
+      <td>preview</td>
+      <td>
+        <button type="button" pButton icon="pi pi-check" (click)="selectModel(model)"></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

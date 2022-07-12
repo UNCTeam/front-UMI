@@ -19,6 +19,11 @@ import {HttpClientModule} from "@angular/common/http";
 import { ModelSelectComponent } from './projects/project/models/model-select/model-select.component';
 import {OrderListModule} from "primeng/orderlist";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {DataViewModule} from "primeng/dataview";
+import {DropdownModule} from "primeng/dropdown";
+import {ButtonModule} from "primeng/button";
+import {TableModule} from "primeng/table";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
 
 @NgModule({
   declarations: [
@@ -43,6 +48,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     RouterModule,
     FormsModule,
     OrderListModule,
+    DataViewModule,
+    DropdownModule,
+    ButtonModule,
+    TableModule,
+    ConfirmDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
