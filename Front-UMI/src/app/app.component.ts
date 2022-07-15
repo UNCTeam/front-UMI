@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ProjectService} from "./services/project.service";
+import {ItemService} from "./services/item.service";
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,11 @@ import {ProjectService} from "./services/project.service";
 export class AppComponent implements OnInit {
   title = 'Front-UMI';
 
+  constructor(private projectService: ProjectService, private itemService: ItemService) { }
 
-  constructor(private projectService: ProjectService) {
-  }
 
   ngOnInit(): void {
     this.projectService.initProjects(1);
+    this.itemService.initItems();
   }
 }

@@ -16,8 +16,10 @@ export class ConfigComponent implements OnInit {
   constructor(public projectService: ProjectService) { }
 
   ngOnInit(): void {
-    this.name = this.projectService.selectedProject.name;
-    this.authorizedServer = this.projectService.selectedProject.authorizedServers;
+    if (this.projectService.selectedProject) {
+      this.name = this.projectService.selectedProject.name;
+      this.authorizedServer = this.projectService.selectedProject.authorizedServers;
+    }
   }
 
   onSave(): void {

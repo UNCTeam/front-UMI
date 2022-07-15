@@ -1,5 +1,6 @@
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 file-upload">
   <label for="texture" class="block font-bold text-xl mb-1 w-full text-center">Texture File</label>
+  <input type="text" name="model_name" id="model_name">
   <p-fileUpload [showUploadButton]="false" id="texture" name="texture" url="./upload.php" [customUpload]="true" [multiple]="false" (onSelect)="onSelectTexture($event)" accept="image/*" [maxFileSize]="5000000">
   </p-fileUpload>
   <label for="model" class="block font-bold text-xl mb-1 w-full text-center">Model File</label>

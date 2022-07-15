@@ -8,12 +8,12 @@ import {ProjectService} from "../../services/project.service";
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit {
-  id: number | null | undefined
+  id: number | undefined
 
   constructor(public projectService: ProjectService) { }
 
   ngOnInit(): void {
-    this.id = this.projectService.selectedProject.id;
+    //this.id = this.projectService.selectedProject.id;
   }
 
 }

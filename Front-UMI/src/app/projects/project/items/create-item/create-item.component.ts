@@ -23,41 +23,68 @@ export class CreateItemComponent implements OnInit {
   customTagsPropertys = new Array<CustomTagProperty>(new CustomTagProperty('ATTACK', '12'));
   customValueField = 0;
   customTagField: CustomTagProperty = new CustomTagProperty('ATTACK', '12');
-  itemField = new Item(0, "", ItemType.HELMET, 0, new Array<CustomTag>(), null);
-  itemModel: any;
+  itemField: {
+    name: string,
+    type: ItemType,
+    durability: number,
+    customTags: CustomTag[]
+    model: Model
+  }
+
   // Edition ou création ?
   isEditing = false;
 
-  // @ts-ignore
   ref: DynamicDialogRef;
 
   constructor(private activatedroute: ActivatedRoute, public itemService: ItemService, public dialogService: DialogService) { }
 
   ngOnInit(): void {
-    this.itemField = new Item(0, "", ItemType.HELMET, 0, new Array<CustomTag>(), null);
     this.activatedroute.paramMap.subscribe(params => {
       if(params.keys.length != 0) {
-        // @ts-ignore
-        let id:number = +params.get('id');
-        this.itemField = this.itemService.itemList[id];
+        this.isEditing = true;
+        let id = params.get('id');
+
         // TODO : relocale l'user à la racine si l'id en param est incorrect ou introuvable
       }
     });
   }
 
   removeCustomTag(customTag: CustomTag) {
-    this.itemField.customTags = this.itemField.customTags.filter(cu => cu != customTag);
+    if (this.itemField.customTags) this.itemField.customTags = this.itemField.customTags.filter((cu: CustomTag) => cu != customTag);
   }
 
   addCustomTag() {
-    this.itemField.customTags.push(new CustomTag(this.customTagField, this.customValueField));
-    this.customValueField = 0;
+    if (this.itemField.customTags) {
+      this.itemField.customTags.push(new CustomTag(this.customTagField, this.customValueField));
+      this.customValueField = 0;
+    }
   }
 
   save() {
-    const item = new Item(1, this.itemField.name, this.itemField.type, this.itemField.durability, this.itemField.customTags, null);
-    // TODO: Faire un susbcribe sur l'appel API -> Si value => redirect + message success Si error => afficher error
-    this.itemService.newItem(item);
+    if (this.validate()) {
+      const item = new Item(1, this.itemField.name, this.itemField.type, this.itemField.durability, this.itemField.customTags, null);
+      // TODO: Faire un susbcribe sur l'appel API -> Si value => redirect + message success Si error => afficher error
+      this.itemService.newItem(item);
+    }
+  }
+
+  validate(): boolean {
+    let res: boolean = true;
+
+    if (!this.itemField.name) {
+      console.log('Name is required');
+      res = false;
+    }
+    if (!this.itemField.type) {
+      console.log('Type is required');
+      res = false;
+    }
+    if (!this.itemField.durability) {
+      console.log('Durability is required');
+      res = false;
+    }
+
+    return res;
   }
 
   selectModel() {
@@ -70,7 +97,7 @@ export class CreateItemComponent implements OnInit {
 
     this.ref.onClose.subscribe((model: Model) =>{
       if (model) {
-        this.itemModel = model;
+        this.itemField.model = model;
       }
     });
   }
