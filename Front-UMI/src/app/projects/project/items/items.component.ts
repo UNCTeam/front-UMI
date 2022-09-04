@@ -19,6 +19,7 @@ export class ItemsComponent implements OnInit {
   constructor(public itemService: ItemService, private confirmationService: ConfirmationService) { }
 
   ngOnInit(): void {
+    this.itemService.initItems();
     this.checkEmptyItems();
   }
 

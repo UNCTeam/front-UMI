@@ -20,8 +20,8 @@ export class ModelService {
     headers.set('Access-Control-Allow-Origin', '*');
 
     let data = new FormData();
-    data.append('texture', textureFile, textureFile.name);
-    data.append('model', modelFile, modelFile.name);
+    data.append('texture', model.textureFile, model.textureFile.name);
+    data.append('model', model.modelFile, model.modelFile.name);
     data.append('name', 'test');
 
     await this.apiHttpService.post('models', data, { headers: headers }).subscribe(

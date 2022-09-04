@@ -23,7 +23,7 @@ export class ProjectService {
   }
 
   initProjects(userId: number) {
-    return this.apiHttpService.get(environment.apiUrl + 'accounts/projects/' + userId).subscribe(value => {
+    return this.apiHttpService.get('accounts/projects/' + userId).subscribe(value => {
       console.log(value);
       //this.projects = value;
     },

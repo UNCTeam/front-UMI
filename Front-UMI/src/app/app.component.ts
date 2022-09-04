@@ -15,6 +15,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectService.initProjects(1);
-    this.itemService.initItems();
   }
 }

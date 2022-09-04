@@ -32,7 +32,8 @@ export class ConfigComponent implements OnInit {
 
   addIp(): void {
     if(this.ipInputField !== "") {
-      this.authorizedServer.push(new AuthorizedServer(this.ipInputField));
+      // TODO : Call Services
+      this.authorizedServer.push(new AuthorizedServer(1, this.ipInputField));
       this.ipInputField = "";
     }
   }
