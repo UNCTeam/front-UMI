@@ -23,6 +23,6 @@ export class ProjectsComponent implements OnInit {
 
   goToProject(project: Project) {
     this.projectService.selectedProject = project;
-    this.router.navigate(['./project/'])
+    this.router.navigate(['./app/dashboard/'])
   }
 }

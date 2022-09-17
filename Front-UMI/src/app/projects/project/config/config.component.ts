@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthorizedServer} from "../../../model/authorizedServer";
 import {ProjectService} from "../../../services/project.service";
+import {Project} from "../../../model/project";
 
 @Component({
   selector: 'app-config',
@@ -39,6 +40,7 @@ export class ConfigComponent implements OnInit {
   }
 
   save() {
-
+    let projet = new Project(this.projectService.selectedProject.id, this.name, this.authorizedServer);
+    this.projectService.saveProject(projet);
   }
 }

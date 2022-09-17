@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ProjectService} from "../services/project.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private projetService: ProjectService,private router: Router) { }
 
   ngOnInit(): void {
+    if(this.projetService.selectedProject == undefined) {
+      this.router.navigate(['./projects/'])
+    }
   }
 
 }

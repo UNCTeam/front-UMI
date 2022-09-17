@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Model} from "../model/model";
 import {ApiHttpService} from "./api-http.service";
 import {HttpHeaders} from "@angular/common/http";
+import {ProjectService} from "./project.service";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import {HttpHeaders} from "@angular/common/http";
 export class ModelService {
   models: Model[] = [];
 
-  constructor(private apiHttpService: ApiHttpService) { }
+  constructor(private apiHttpService: ApiHttpService, private projectService: ProjectService) { }
 
 
   async addModel(model: ModelTemplate): Promise<Boolean> {
@@ -23,8 +24,9 @@ export class ModelService {
     data.append('texture', model.textureFile, model.textureFile.name);
     data.append('model', model.modelFile, model.modelFile.name);
     data.append('name', 'test');
-
-    await this.apiHttpService.post('models', data, { headers: headers }).subscribe(
+    console.log(this.projectService.selectedProject);
+    let endpoint = 'models' + this.projectService.selectedProject.id;
+    await this.apiHttpService.post(endpoint, data, { headers: headers }).subscribe(
       (value) => {
         this.models.push(value);
         res = true;

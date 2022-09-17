@@ -12,13 +12,13 @@ import {ModelSelectComponent} from "./projects/project/models/model-select/model
 
 const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
-  { path: 'items', component: ItemsComponent},
-  { path: 'items/new', component: CreateItemComponent },
-  { path: 'items/edit/:id', component: CreateItemComponent },
-  { path: 'blocks', component: BlocksComponent},
-  { path: 'models', component: ModelSelectComponent},
-  { path: 'config', component: ConfigComponent},
-  { path: 'project', component: ProjectComponent},
+  { path: 'app/items', component: ItemsComponent},
+  { path: 'app/items/new', component: CreateItemComponent },
+  { path: 'app/items/edit/:id', component: CreateItemComponent },
+  { path: 'app/blocks', component: BlocksComponent},
+  { path: 'app/models', component: ModelSelectComponent},
+  { path: 'app/config', component: ConfigComponent},
+  { path: 'app/dashboard', component: ProjectComponent},
   { path: '', component: LoginComponent},
 ];
 

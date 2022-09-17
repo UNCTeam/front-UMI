@@ -26,6 +26,7 @@ import {TableModule} from "primeng/table";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import { CreateModelComponent } from './projects/project/models/create-model/create-model.component';
 import {FileUploadModule} from "primeng/fileupload";
+import { CreateProjectComponent } from './projects/project/create-project/create-project.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {FileUploadModule} from "primeng/fileupload";
     LoginComponent,
     CreateItemComponent,
     ModelSelectComponent,
-    CreateModelComponent
+    CreateModelComponent,
+    CreateProjectComponent
   ],
   imports: [
     HttpClientModule,

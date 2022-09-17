@@ -23,12 +23,12 @@ export class CreateItemComponent implements OnInit {
   customTagsPropertys = new Array<CustomTagProperty>(new CustomTagProperty('ATTACK', '12'));
   customValueField = 0;
   customTagField: CustomTagProperty = new CustomTagProperty('ATTACK', '12');
-  itemField: {
-    name: string,
-    type: ItemType,
-    durability: number,
-    customTags: CustomTag[]
-    model: Model
+  itemField = {
+    name: '',
+    type: ItemType.OTHER,
+    durability: 0,
+    customTags: new Array<CustomTag>(),
+    model: null
   }
 
   // Edition ou création ?
