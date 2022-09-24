@@ -40,14 +40,23 @@ export class ProjectService {
     return <string>this.route.snapshot.paramMap.get('id');
   }
 
-  saveProject(projet: Project) {
-    return this.apiHttpService.put('projects/', projet).subscribe(value => {
-        this.selectedProject = value;
-        // TODO : Temporaire -> Créer l'user service
-        this.initProjects(this.userService.getUserId());
-      },
-      error => {
-        console.log(error);
-      });
+  saveProject(projet: any) {
+    return this.apiHttpService.post('projects/', projet);
+  }
+
+  updateProject(projet: any) {
+    return this.apiHttpService.put('projects/', projet);
+  }
+
+  addAuthorizedServer(ip: string) {
+    let authroizedServer = {
+      serverAddress: ip,
+      project_id: this.selectedProject?.id
+    }
+    return this.apiHttpService.post('authorizedservers', authroizedServer);
+  }
+
+  removeAuthorizedServer(id: number) {
+    return this.apiHttpService.delete('authorizedservers/' + id);
   }
 }

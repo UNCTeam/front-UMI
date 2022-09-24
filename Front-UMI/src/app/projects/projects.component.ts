@@ -25,4 +25,8 @@ export class ProjectsComponent implements OnInit {
     this.projectService.selectedProject = project;
     this.router.navigate(['./app/dashboard/'])
   }
+
+  createProject() {
+    this.router.navigate(['/projects/create/'])
+  }
 }

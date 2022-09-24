@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProjectService} from "./services/project.service";
 import {ItemService} from "./services/item.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import {ItemService} from "./services/item.service";
 export class AppComponent implements OnInit {
   title = 'Front-UMI';
 
-  constructor(private projectService: ProjectService, private itemService: ItemService) { }
+  constructor(private projectService: ProjectService, public router: Router) { }
 
 
   ngOnInit(): void {

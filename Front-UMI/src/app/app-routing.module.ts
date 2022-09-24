@@ -12,6 +12,7 @@ import {ModelSelectComponent} from "./projects/project/models/model-select/model
 
 const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
+  { path: 'projects/create', component: ConfigComponent },
   { path: 'app/items', component: ItemsComponent},
   { path: 'app/items/new', component: CreateItemComponent },
   { path: 'app/items/edit/:id', component: CreateItemComponent },

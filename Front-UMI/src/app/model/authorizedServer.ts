@@ -1,9 +1,10 @@
 export class AuthorizedServer {
   id: number;
-  ip: string;
+  serverAddress: string;
+  project_id: number;
 
   constructor(id: number, ip: string) {
     this.id = id;
-    this.ip = ip;
+    this.serverAddress = ip;
   }
 }
